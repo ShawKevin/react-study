@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js//babel.min.js"></script>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+</body>
+<script type="text/babel">
+    // 创建虚拟dom  jsx不用写引号
+    const vDom  = <h1 id="title">hello world!</h1>; 
+    ReactDOM.render(
+	vDom,
+	document.getElementById('test'));
+    console.log("虚拟dom",vDom);
+    // 虚拟dom本质Object对象!
+    let a = document.getElementById("test");
+    console.dir(a)
+    // 其实都一样 只是真实dom方法属性比较多  
+</script>
+</html>

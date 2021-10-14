@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js//babel.min.js"></script>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+</body>
+<script type="text/babel">
+    // 创建虚拟dom  jsx不用写引号
+    const vDom  = <h1>hello world!</h1>; 
+    // 创建虚拟dom
+    const vDom2 = (
+        <div>
+            <h1>hello</h1>
+        </div>
+    )
+    //  jsx转换为这种写法----------------
+    // React.createElemnt("h1",{id:"title",name:"lierwang"},"Hello reacte");
+    // -----------------------------
+    ReactDOM.render(
+	vDom,
+	document.getElementById('test'));
+</script>
+</html>

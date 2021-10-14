@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js//babel.min.js"></script>
+    <title>Document</title>
+    <style>
+        .title {
+            background: #fab;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    // 3样式类名别用class  用calssname
+    // 4 内连样式要用{{}}的方式写
+    // 5 虚拟dom只有一个根标签
+    // 6 标签必须闭合
+    
+    let data = "this is data";
+    const vDOM = (
+        <div>
+            <h1 className="title">{data.toLocaleUpperCase()}</h1>
+            <p style={{color:'red'}}>测试</p>
+            <input type="text"/>
+        
+        </div>
+    )
+    ReactDOM.render(vDOM, document.getElementById("app"))
+</script>
+
+</html>
