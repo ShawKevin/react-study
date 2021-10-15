@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js//babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+<script type="text/babel">
+
+    // 组件首字母大写 使用了babel的严格模式 把自定义的this不绑定到window上
+    function MyComponet(){
+        console.log(this);// 此处的this是undefined
+        return  <h1>使用函数组件 简单组件的定义.</h1>
+    }
+    
+    // 渲染组件到页面
+    ReactDOM.render(<MyComponet/>,document.getElementById('app'))
+    // ReactDOM.render(MyComponet(),document.getElementById('app'))
+    // ReactDOM.render(Demo(),document.getElementById('app'))
+
+    
+    /**
+     * rander之后发生 
+     * 1. react解析组件标签 
+     * 2.发现组件使用自定义函数 调用该函数返回虚拟DOM 随后呈现在页面中. 
+     **/
+</script>
+</html> 

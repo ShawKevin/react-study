@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+<script type="text/babel">
+    class Weather extends React.Component{
+        constructor(props){
+            super(props)
+            // 初始化状态  使用对象的方式
+            this.state = {isHot:false,temperature:18}
+        }
+        render(){
+            console.log(this);
+            // 大写的Click 方法不要写括号 
+            return <h1 onClick={this.changeWeather}>今天天气{this.state.isHot?'热啊':'冷啊'}</h1>
+        }
+        changeWeather() {
+            // this.state  = !this.state
+            console.log(this);
+        }
+        
+    }
+    ReactDOM.render(<Weather/>,document.getElementById("app"))
+
+    
+</script>
+</html>

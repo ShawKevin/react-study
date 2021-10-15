@@ -21,10 +21,14 @@
     <div id="app"></div>
 </body>
 <script type="text/babel">
+    // 1 虚拟dom不要引号
+    // 2 标签中混入js 要使用{}
     // 3样式类名别用class  用calssname
     // 4 内连样式要用{{}}的方式写
     // 5 虚拟dom只有一个根标签
     // 6 标签必须闭合
+    // 7 标签首字母 小写字母开头则将改标签转为html中同名元素  若没有改标签对应的同名元素则报错
+                //    大写字母会转为组件
     
     let data = "this is data";
     const vDOM = (
@@ -32,7 +36,6 @@
             <h1 className="title">{data.toLocaleUpperCase()}</h1>
             <p style={{color:'red'}}>测试</p>
             <input type="text"/>
-        
         </div>
     )
     ReactDOM.render(vDOM, document.getElementById("app"))
