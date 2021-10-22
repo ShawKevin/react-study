@@ -18,19 +18,21 @@
     class Person extends React.Component{
         state = {name:"李尔王",age:12}
         render(){
+            const {name,age} = this.props 
             console.log(this);
             return (
                 <div>
                     <ul>
-                        <li>name:{this.state.name}</li>
-                        <li>age:{this.state.age}</li>
+                        <li>name:{this.props.name}</li>
+                        <li>age:{this.props.age}</li>
                     </ul>
                 </div>
             )
         }
     }
     
-    ReactDOM.render(<Person/>,document.getElementById("app"))
+    ReactDOM.render(<Person age="1" name="宝器"/>,document.getElementById("app"))
+    ReactDOM.render(<Person age="2" name="宝器2"/>,document.getElementById("app1"))
     // ReactDOM.render(<Person/>,document.getElementById("app1"))
     // ReactDOM.render(<Person/>,document.getElementById("app2"))
 </script>
