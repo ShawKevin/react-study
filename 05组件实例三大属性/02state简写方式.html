@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+<script type="text/babel">
+    class Weather extends React.Component{
+        state = {isHot:false,temperature:18}
+        
+        render(){
+            console.log(this);
+            return <h1 onClick={this.changeWeather}>今天天气{this.state.isHot?'热啊':'冷啊'}!今天温度为{this.state.temperature}</h1>
+        }
+        // 自定义方法 写成属性加箭头函数
+        changeWeather = () => {
+            console.log(this);
+            this.setState({
+                isHot:!this.state.isHot
+            })
+        }
+        
+    }
+    ReactDOM.render(<Weather/>,document.getElementById("app"))
+
+    
+</script>
+</html>

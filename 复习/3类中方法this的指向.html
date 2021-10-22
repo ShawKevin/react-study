@@ -14,12 +14,16 @@
             this.name= name;
             this.age = age;
         }
+        // 类中已经局部开启了严格模式  外部调用方法 this则是undefined
         sayHi(){
             console.log(this);
         }
     }
 
     let p1 = new Person("李尔王",12)
-    console.log(p1);
+    // 实例调用
+    p1.sayHi()
+    const x  = p1.sayHi;
+    x()
 </script>
 </html>

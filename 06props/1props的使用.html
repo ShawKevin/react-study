@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js//babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="app1"></div>
+    <div id="app2"></div>
+</body>
+<script type="text/babel">
+    class Person extends React.Component{
+        state = {name:"李尔王",age:12}
+        render(){
+            console.log(this);
+            return (
+                <div>
+                    <ul>
+                        <li>name:{this.state.name}</li>
+                        <li>age:{this.state.age}</li>
+                    </ul>
+                </div>
+            )
+        }
+    }
+    
+    ReactDOM.render(<Person/>,document.getElementById("app"))
+    // ReactDOM.render(<Person/>,document.getElementById("app1"))
+    // ReactDOM.render(<Person/>,document.getElementById("app2"))
+</script>
+</html>
